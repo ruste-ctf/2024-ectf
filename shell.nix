@@ -27,7 +27,10 @@ pkgs.mkShell {
     pkgs.cacert
     (pkgs.callPackage custom_nix_pkgs/analog_openocd.nix { })
     pkgs.minicom
+    pkgs.rustup
   ];
+
+  RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
 
   msdk = builtins.fetchGit {
     url = "https://github.com/Analog-Devices-MSDK/msdk.git";
