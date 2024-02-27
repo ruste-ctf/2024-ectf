@@ -1,0 +1,10 @@
+[package]
+name = "ectf_2024_lib"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+max78000-hal = { git = "https://github.com/ruste-ctf/MAX78000-hal.git" }
