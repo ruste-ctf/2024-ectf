@@ -2,14 +2,18 @@
 #define FLASH_H__
 #include <stdint.h>
 
-struct flash_entry;
+typedef struct {
+    uint32_t flash_magic;
+    uint32_t component_cnt;
+    uint32_t component_ids[32];
+} flash_entry;
+
+int init_flash(uint32_t magic);
+
+flash_entry read_flash(void);
+
+int write_flash(flash_entry* info);
 
 int poll_flash(void);
-
-void init_flash(uint32_t magic, uint32_t component_count, uint32_t* component_identifiers);
-
-struct flash_entry read_flash(void);
-
-void write_flash(struct flash_entry* info);
 
 #endif

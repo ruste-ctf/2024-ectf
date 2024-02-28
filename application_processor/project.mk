@@ -22,7 +22,7 @@ IPATH+=../deployment
 IPATH+=inc/
 VPATH+=src/
 
-PROJ_LIBS+=ectf_2024_lib
+PROJ_LIBS+=ectf_2024
 PROJ_LDFLAGS+=-L../ectf_2024_lib/target/thumbv7em-none-eabi/release/
 
 # ****************** eCTF Bootloader *******************
